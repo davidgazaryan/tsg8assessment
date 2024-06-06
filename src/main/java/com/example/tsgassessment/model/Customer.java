@@ -1,15 +1,18 @@
 package com.example.tsgassessment.model;
 
-import javax.persistence.Entity;
-import javax.persistence.Id;
+import javax.persistence.*;
 import java.time.LocalDateTime;
 
 @Entity
 public class Customer {
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
+    @Column(name = "name",nullable = false)
     private String name;
+    @Column(name = "email", nullable = false, unique = true)
     private String email;
+    @Column(name = "address", nullable = false, unique = true)
     private String address;
     private LocalDateTime createdAt;
 }
