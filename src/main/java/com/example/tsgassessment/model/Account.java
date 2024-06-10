@@ -16,5 +16,7 @@ public class Account {
     private AccountType  accountType;
 
     private LocalDateTime createdAt;
+    @ManyToOne(fetch = FetchType.LAZY)
+    private Customer customer;
 
 }
