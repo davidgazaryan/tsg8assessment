@@ -1,4 +1,4 @@
-package com.example.tsgassessment;
+package com.example.TSGAssessmentMain;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;

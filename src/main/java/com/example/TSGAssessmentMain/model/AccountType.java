@@ -1,4 +1,4 @@
-package com.example.tsgassessment.model;
+package com.example.TSGAssessmentMain.model;
 
 public enum AccountType {
     SAVINGS,

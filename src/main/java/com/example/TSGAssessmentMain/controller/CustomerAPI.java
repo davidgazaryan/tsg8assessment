@@ -1,7 +1,7 @@
-package com.example.tsgassessment.controller;
+package com.example.TSGAssessmentMain.controller;
 
-import com.example.tsgassessment.model.Customer;
-import com.example.tsgassessment.repository.CustomerRepository;
+import com.example.TSGAssessmentMain.model.Customer;
+import com.example.TSGAssessmentMain.repository.CustomerRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;

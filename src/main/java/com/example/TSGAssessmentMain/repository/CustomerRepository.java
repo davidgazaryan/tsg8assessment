@@ -1,6 +1,6 @@
-package com.example.tsgassessment.repository;
+package com.example.TSGAssessmentMain.repository;
 
-import com.example.tsgassessment.model.Customer;
+import com.example.TSGAssessmentMain.model.Customer;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 

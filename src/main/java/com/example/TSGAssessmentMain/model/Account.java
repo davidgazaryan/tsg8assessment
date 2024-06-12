@@ -1,6 +1,8 @@
-package com.example.tsgassessment.model;
+package com.example.TSGAssessmentMain.model;
 
-import javax.persistence.*;
+
+import jakarta.persistence.*;
+
 import java.math.BigDecimal;
 import java.time.LocalDateTime;
 
