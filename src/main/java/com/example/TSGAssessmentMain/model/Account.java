@@ -15,22 +15,13 @@ public class Account {
     @Column(name = "balance", nullable = false)
     private BigDecimal balance;
     @Column(name = "accountType" , nullable = false)
+    @Enumerated(EnumType.STRING)
     private AccountType  accountType;
 
     private LocalDateTime createdAt;
     @ManyToOne(fetch = FetchType.LAZY)
     private Customer customer;
 
-    @Transient
-    private Long customerId; // Hold the customer_id temporarily
-
-    public Long getCustomerId() {
-        return customerId;
-    }
-
-    public void setCustomerId(Long customerId) {
-        this.customerId = customerId;
-    }
 
     public long getId() {
         return id;
