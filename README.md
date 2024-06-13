@@ -30,6 +30,13 @@ To get started with the project, follow these steps:
   
   Once the project is reloaded, IntelliJ will automatically download the required dependencies specified in the pom.xml file.
 
-3. **Locate main file to run:**
+3. **Setup your postgres db in application.properties file which is inside resources directory:**
+   spring.datasource.url=jdbc:postgresql://localhost:5432/your_database
+   spring.datasource.username=your_username
+   spring.datasource.password=your_password
+   spring.jpa.hibernate.ddl-auto = update
+   spring.jpa.database-platform=org.hibernate.dialect.PostgreSQLDialect
+
+4. **Locate main file to run:**
    This is annotated by @SpringBootApplication and should be in the src folder. Run the project from there.
     You can then access the swagger ui by visiting http://localhost:8080/swagger-ui/index.html.
