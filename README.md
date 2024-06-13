@@ -19,7 +19,7 @@ To get started with the project, follow these steps:
    You can type the following commands into your terminal inside of a new project:
    
    git clone https://github.com/davidgazaryan/tsg8assessment.git
-   cd demo
+   cd tsg8assessment
 
 
 2. **Locate pom.xml file in intellij or choice of ide:**
