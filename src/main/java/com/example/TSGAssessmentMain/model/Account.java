@@ -19,7 +19,7 @@ public class Account {
     private AccountType  accountType;
 
     private LocalDateTime createdAt;
-    @ManyToOne(fetch = FetchType.LAZY)
+    @ManyToOne(fetch = FetchType.EAGER)
     private Customer customer;
 
 
@@ -31,7 +31,7 @@ public class Account {
         this.id = id;
     }
 
-    // Getter and setter for 'balance' field
+    // Getter and setters
     public BigDecimal getBalance() {
         return balance;
     }
@@ -40,7 +40,7 @@ public class Account {
         this.balance = balance;
     }
 
-    // Getter and setter for 'accountType' field
+
     public AccountType getAccountType() {
         return accountType;
     }
@@ -49,7 +49,7 @@ public class Account {
         this.accountType = accountType;
     }
 
-    // Getter and setter for 'createdAt' field
+
     public LocalDateTime getCreatedAt() {
         return createdAt;
     }
@@ -58,7 +58,7 @@ public class Account {
         this.createdAt = createdAt;
     }
 
-    // Getter and setter for 'customer' field
+
     public Customer getCustomer() {
         return customer;
     }

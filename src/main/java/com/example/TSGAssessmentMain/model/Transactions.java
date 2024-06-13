@@ -12,7 +12,7 @@ public class Transactions {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
 
-    @ManyToOne(fetch = FetchType.LAZY)
+    @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "account_id", nullable = false)
     private Account account;
 
@@ -22,6 +22,9 @@ public class Transactions {
 
     @Column(name = "amount", nullable = false)
     private BigDecimal amount;
+    @Enumerated(EnumType.STRING)
+    @Column(name = "transaction_type", nullable = false)
+    private TransactionType transactionType;
 
     @Column(name = "timestamp", nullable = false)
     private LocalDateTime timestamp;
@@ -65,5 +68,13 @@ public class Transactions {
 
     public void setTimestamp(LocalDateTime timestamp) {
         this.timestamp = timestamp;
+    }
+
+    public TransactionType getTransactionType(){
+        return transactionType;
+    }
+
+    public void setTransactionType(TransactionType transactionType){
+        this.transactionType = transactionType;
     }
 }

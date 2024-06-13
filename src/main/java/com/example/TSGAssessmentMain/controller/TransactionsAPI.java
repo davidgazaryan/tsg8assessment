@@ -1,6 +1,7 @@
 package com.example.TSGAssessmentMain.controller;
 
 import com.example.TSGAssessmentMain.model.Account;
+import com.example.TSGAssessmentMain.model.TransactionType;
 import com.example.TSGAssessmentMain.model.Transactions;
 import com.example.TSGAssessmentMain.repository.AccountsRepository;
 import com.example.TSGAssessmentMain.repository.TransactionsRepository;
@@ -56,6 +57,7 @@ public class TransactionsAPI {
             transactions.setAccountType(account.getAccountType());
             transactions.setAmount(amount);
             transactions.setTimestamp(LocalDateTime.now());
+            transactions.setTransactionType(TransactionType.DEPOSIT);
 
             accountsRepository.save(account);
             transactionsRepository.save(transactions);
@@ -84,6 +86,7 @@ public class TransactionsAPI {
                 transactions.setAccountType(account.getAccountType());
                 transactions.setAmount(amount.negate()); // Withdrawal amount is negative
                 transactions.setTimestamp(LocalDateTime.now());
+                transactions.setTransactionType(TransactionType.WITHDRAW);
 
                 accountsRepository.save(account);
                 transactionsRepository.save(transactions);

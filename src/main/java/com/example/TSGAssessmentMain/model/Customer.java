@@ -27,7 +27,7 @@ public class Customer {
         this.id = id;
     }
 
-    // Getter and setter for 'name' field
+
     public String getName() {
         return name;
     }
@@ -36,7 +36,6 @@ public class Customer {
         this.name = name;
     }
 
-    // Getter and setter for 'email' field
     public String getEmail() {
         return email;
     }
@@ -45,7 +44,6 @@ public class Customer {
         this.email = email;
     }
 
-    // Getter and setter for 'address' field
     public String getAddress() {
         return address;
     }
@@ -54,7 +52,6 @@ public class Customer {
         this.address = address;
     }
 
-    // Getter and setter for 'createdAt' field
     public LocalDateTime getCreatedAt() {
         return createdAt;
     }
