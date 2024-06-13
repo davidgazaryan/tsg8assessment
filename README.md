@@ -40,7 +40,7 @@ To get started with the project, follow these steps:
    spring.jpa.hibernate.ddl-auto = update
    spring.jpa.database-platform=org.hibernate.dialect.PostgreSQLDialect
    
-   Ensure Postgresql is running 
+   Ensure Postgresql is running and test your connection
 
 
 4. **Locate main file to run:**

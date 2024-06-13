@@ -2,6 +2,8 @@ package com.example.TSGAssessmentMain.controller;
 
 import com.example.TSGAssessmentMain.model.Customer;
 import com.example.TSGAssessmentMain.repository.CustomerRepository;
+import io.swagger.v3.oas.annotations.Operation;
+import io.swagger.v3.oas.annotations.responses.ApiResponse;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -27,6 +29,7 @@ public class CustomerAPI {
         List<Customer> customers = customerRepository.findAll();
         return new ResponseEntity<>(customers, HttpStatus.OK);
     }
+    @ApiResponse(responseCode = "201",description = "Customer created")
 
     @PostMapping
     public ResponseEntity<Customer> createCustomer(@RequestBody Customer customer) {
@@ -36,6 +39,7 @@ public class CustomerAPI {
         return ResponseEntity.status(HttpStatus.CREATED).body(savedCustomer);
     }
 
+    @Operation(summary = "Get customer by their id")
     @GetMapping("/{id}")
     public ResponseEntity<Customer> getCustomerById(@PathVariable long id) {
         Optional<Customer> optionalCustomer = customerRepository.findById(id);
@@ -43,6 +47,7 @@ public class CustomerAPI {
                 .orElse(ResponseEntity.notFound().build());
     }
 
+    @Operation(summary = "Access customer by their id and update customer information")
     @PutMapping("/{id}")
     public ResponseEntity<Customer> updateCustomer(@PathVariable long id, @RequestBody Customer updatedCustomer) {
         Optional<Customer> optionalCustomer = customerRepository.findById(id);
@@ -59,6 +64,7 @@ public class CustomerAPI {
         }
     }
 
+    @Operation(summary = "delete customer based on id")
     @DeleteMapping("/{id}")
     public ResponseEntity<?> deleteCustomer(@PathVariable long id) {
         if (customerRepository.existsById(id)) {

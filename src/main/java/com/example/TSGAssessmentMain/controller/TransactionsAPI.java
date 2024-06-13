@@ -4,6 +4,8 @@ import com.example.TSGAssessmentMain.model.Account;
 import com.example.TSGAssessmentMain.model.Transactions;
 import com.example.TSGAssessmentMain.repository.AccountsRepository;
 import com.example.TSGAssessmentMain.repository.TransactionsRepository;
+import io.swagger.v3.oas.annotations.Operation;
+import io.swagger.v3.oas.annotations.responses.ApiResponse;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -26,6 +28,7 @@ public class TransactionsAPI {
         this.transactionsRepository = transactionsRepository;
     }
 
+    @Operation(summary = "Get all transactions for a specific account")
     @GetMapping
     public ResponseEntity<List<Transactions>> getTransactions(@PathVariable Long accountId) {
         Optional<Account> optionalAccount = accountsRepository.findById(accountId);
@@ -37,6 +40,7 @@ public class TransactionsAPI {
         }
     }
 
+    @ApiResponse(responseCode = "200", description = "Successfully deposited money")
     @PostMapping("/deposit")
     public ResponseEntity<String> deposit(@PathVariable Long accountId, @RequestParam BigDecimal amount) {
         Optional<Account> optionalAccount = accountsRepository.findById(accountId);
@@ -62,6 +66,7 @@ public class TransactionsAPI {
         }
     }
 
+    @ApiResponse(responseCode = "200", description = "Successfully withdrew money")
     @PostMapping("/withdraw")
     public ResponseEntity<String> withdraw(@PathVariable Long accountId, @RequestParam BigDecimal amount) {
         Optional<Account> optionalAccount = accountsRepository.findById(accountId);

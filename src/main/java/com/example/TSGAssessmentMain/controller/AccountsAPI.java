@@ -2,6 +2,7 @@ package com.example.TSGAssessmentMain.controller;
 
 import com.example.TSGAssessmentMain.model.Account;
 import com.example.TSGAssessmentMain.repository.AccountsRepository;
+import io.swagger.v3.oas.annotations.Operation;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -44,6 +45,8 @@ public class AccountsAPI {
         return optionalAccount.map(account -> ResponseEntity.ok().body(account))
                 .orElse(ResponseEntity.notFound().build());
     }
+
+    @Operation(summary = "Get all accounts that belong to specific customer")
 
     @GetMapping("/customers/{id}/accounts")
     public ResponseEntity<List<Account>> getAccountsByCustomerId(@PathVariable long id) {
